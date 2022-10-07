@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.11.2/ace.min.js"
+      integrity="sha512-+jXgMZfP8zMr7zRDS+ScdX0kJUX6jzTKDkQH+Kt4Tojp0u22z7IVaa1Gb9bXT1+l04vnmZCrTLr6hLBcaF41NQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="flex flex-col h-screen">
+      <nav class="flex items-center justify-between flex-wrap bg-green-800 p-4">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <span class="font-semibold text-xl tracking-tight"
+            >OpenAPI Forge 🛠🔥</span
+          >
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <select
+              id="language-selector"
+              class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white mt-4 lg:mt-0"
+            >
+              <option value="typescript">TypeScript</option>
+              <option value="csharp">C#</option>
+            </select>
+            <a
+              class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-500 hover:bg-white mt-4 lg:mt-0"
+              id="generate"
+            >
+              Generate
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="flex flex-row flex-1">
+        <div id="openapi-editor" class="flex-1"></div>
+        <div class="flex flex-col flex-1">
+          <select id="file-selector"></select>
+          <div id="openapi-output" class="flex-1"></div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
