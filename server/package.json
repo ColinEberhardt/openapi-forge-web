@@ -12,8 +12,9 @@
     "serverless-offline": "^11.0.1"
   },
   "dependencies": {
-    "openapi-forge": "git://github.com/ScottLogic/openapi-forge#b822fcc6fc9d49890f2b1134909257042f7f6814",
-    "openapi-forge-csharp": "github:ScottLogic/openapi-forge-csharp",
-    "openapi-forge-typescript": "github:ScottLogic/openapi-forge-typescript"
+    "openapi-forge": "^1.2.1",
+    "openapi-forge-csharp": "^1.1.1",
+    "openapi-forge-javascript": "^1.0.1",
+    "openapi-forge-typescript": "^1.1.1"
   }
 }

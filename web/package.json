@@ -4,11 +4,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "tailwind:dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "tailwind": "tailwindcss -o ./dist/output.css --minify",
+    "copy": "copyfiles --up 1 --exclude ./src/input.css ./src/* dist",
+    "build": "npm run tailwind && npm run copy",
+    "deploy": "node publish.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "gh-pages": "^4.0.0",
     "tailwindcss": "^3.1.8"
   },
   "description": ""

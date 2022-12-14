@@ -21,6 +21,7 @@ const modeMap = {
   json: "ace/mode/json",
   yaml: "ace/mode/yaml",
   ts: "ace/mode/typescript",
+  js: "ace/mode/javascript",
   cs: "ace/mode/csharp",
 };
 

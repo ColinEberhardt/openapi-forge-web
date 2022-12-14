@@ -2,13 +2,15 @@ const fs = require("fs");
 const Buffer = require("buffer").Buffer;
 const generate = require("openapi-forge");
 
+const petstoreSchema = fs.readFileSync("petstore.json", "utf-8");
+
 module.exports.generate = async (event) => {
   const outputFolder = "/tmp/output";
 
   const payload = JSON.parse(event.body);
 
   await generate(
-    JSON.parse(payload.schema),
+    JSON.parse(payload.schema ?? petstoreSchema),
     `./node_modules/openapi-forge-${payload.language}`,
     {
       logLevel: 4,
@@ -26,8 +28,6 @@ module.exports.generate = async (event) => {
   });
 
   fs.rmdirSync(outputFolder, { recursive: true });
-
-  console.log(response);
 
   return {
     statusCode: 200,
