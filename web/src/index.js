@@ -31,6 +31,7 @@ function showOutput(filename) {
   editorOutput.session.setMode(modeMap[extension]);
   editorOutput.selection.clearSelection();
   editorOutput.session.setUseWrapMode(true);
+  editorOutput.session.setUseWorker(false);
 }
 
 document.getElementById("file-selector").addEventListener("change", (e) => {
